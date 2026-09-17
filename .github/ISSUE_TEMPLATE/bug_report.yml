@@ -1,0 +1,79 @@
+name: Bug report
+description: Report incorrect, missing, or failing Trace behavior.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Remove credentials, private URLs, cluster names, and Secret values before submitting.
+
+  - type: input
+    id: trace-version
+    attributes:
+      label: Trace version
+      placeholder: v1.8.0
+    validations:
+      required: true
+
+  - type: input
+    id: argocd-version
+    attributes:
+      label: Argo CD version
+      placeholder: v3.2.12
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source-shape
+    attributes:
+      label: Application source shape
+      options:
+        - Single-source Git
+        - Single-source Helm repository
+        - Multi-source
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the displayed result and why it is incorrect.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide sanitized steps and the smallest relevant Application status/spec shape.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Browser or API diagnostics
+      description: Add sanitized console errors, failed request paths, or screenshots.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues.
+          required: true
+        - label: I removed sensitive and company-specific information.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true

@@ -1,0 +1,13 @@
+FROM node:24-alpine AS build
+WORKDIR /workspace
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
+COPY tsconfig.json vite.config.ts ./
+COPY src ./src
+RUN npm run build
+FROM busybox:1.36.1
+COPY --from=build /workspace/dist/extension-trace.js /opt/trace/extension-trace.js
+COPY install.sh /usr/local/bin/install-trace
+RUN chmod 0444 /opt/trace/extension-trace.js && chmod 0555 /usr/local/bin/install-trace
+USER 1000:1000
+ENTRYPOINT ["/usr/local/bin/install-trace"]

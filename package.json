@@ -1,0 +1,37 @@
+{
+  "name": "argocd-trace",
+  "version": "1.8.0",
+  "description": "Argo CD UI extension for accurate deployment traceability, manifest changes, operations, and application hierarchy.",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "keywords": [
+    "argocd",
+    "gitops",
+    "kubernetes",
+    "observability",
+    "ui-extension"
+  ],
+  "engines": {
+    "node": ">=22.12.0",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm test && npm run build"
+  },
+  "dependencies": {
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.1",
+    "typescript": "5.6.3",
+    "vite": "8.3.0",
+    "vitest": "5.0.0"
+  }
+}

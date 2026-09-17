@@ -1,0 +1,36 @@
+name: Feature request
+description: Propose a focused improvement to Trace.
+title: "feat: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What operator or developer question is hard to answer today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Explain the UI and the exact Argo CD source of truth.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+
+  - type: checkboxes
+    id: accuracy
+    attributes:
+      label: Accuracy checklist
+      options:
+        - label: I identified which Argo CD field or endpoint supports this information.
+          required: true
+        - label: I considered unavailable, incomplete, and multi-source data.
+          required: true

@@ -1,0 +1,4 @@
+import * as React from 'react';
+export const Section=({title,description,action,children}:{title:string;description?:string;action?:React.ReactNode;children:React.ReactNode})=><section className='trace-panel'><header className='trace-panel__header'><div><h3 className='trace-panel__title'>{title}</h3>{description&&<p className='trace-panel__description'>{description}</p>}</div>{action&&<div className='trace-panel__action'>{action}</div>}</header>{children}</section>;
+export const InfoRows=({children}:{children:React.ReactNode})=><div className='trace-info-list'>{children}</div>;
+export const InfoRow=({label,children}:{label:string;children:React.ReactNode})=><div className='trace-info-list__row'><div className='trace-info-list__label'>{label}</div><div className='trace-info-list__value'>{children}</div></div>;
